@@ -18,7 +18,7 @@ function objeto( main, value ) {
     }else {
       document.querySelector("body").appendChild(h1);
       document.querySelector("title").textContent="No disponible";
-      ocument.querySelector("[href='favicon.ico']").href="";
+      ocument.querySelector("link[href='favicon.ico']").href="fav.png";
     }
   }
 }
