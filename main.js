@@ -13,8 +13,8 @@ function objeto( main, value ) {
     if ( np === value ) {
       var elm = document.querySelector(main);
       elm.classList.remove("none");
-      elm.classList.remove("certificado");
-      elm.style.display = "block";
+      elm.classList.add("certificado");
+      elm.style.display = "";
     }else {
       document.querySelector("body").appendChild(h1);
     }
