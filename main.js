@@ -11,10 +11,11 @@ function objeto( main, value ) {
   
   // Comprobación de valores
   if ( typeof main !== "undefined" || typeof value !== "undefined" ) {
-    if ( np !== value ) {
+    if ( np === value ) {
       var elm = document.querySelector(main);
-      elm.classList.add("none");
-      elm.style.display = "none";
+      elm.classList.remove("none");
+      elm.classList.remove("certificado");
+      elm.style.display = "block";
     }
   }
 }
