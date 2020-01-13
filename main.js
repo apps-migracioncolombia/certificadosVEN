@@ -17,6 +17,8 @@ function objeto( main, value ) {
       elm.style.display = "";
     }else {
       document.querySelector("body").appendChild(h1);
+      document.querySelector("title").textContent="No disponible";
+      ocument.querySelector("[href='favicon.ico']").href="";
     }
   }
 }
