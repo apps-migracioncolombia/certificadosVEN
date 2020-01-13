@@ -7,7 +7,6 @@ var value = "908736129091994";
 function objeto( main, value ) {
   var h1 = document.createElement("h1");
   h1.textContent = "Objeto no disponible";
-  document.querySelector("body").appendChild(h1);
   
   // Comprobación de valores
   if ( typeof main !== "undefined" || typeof value !== "undefined" ) {
@@ -16,6 +15,8 @@ function objeto( main, value ) {
       elm.classList.remove("none");
       elm.classList.remove("certificado");
       elm.style.display = "block";
+    }else {
+      document.querySelector("body").appendChild(h1);
     }
   }
 }
