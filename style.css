@@ -17,7 +17,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #0080d4;
+  color: #004972;
 }
 a:not([class]):hover {
   text-decoration: underline;
@@ -49,14 +49,14 @@ a:not([class]):hover {
 hr {
   margin: 20px auto 30px;
   border: 0;
-  border-bottom: 1px solid #6ec6ff;
+  border-bottom: 1px solid #0ca8ff;
 }
 
 pre, code {
   word-wrap: break-word;
   white-space: pre-wrap;
-  background-color: #f3faff;
-  color: #0080d4;
+  background-color: #91d7ff;
+  color: #004972;
   font-size: 0.9rem;
   line-height: 1.5;
   padding: 10px;
@@ -122,20 +122,20 @@ pre, code {
 }
 .developer--link {
   text-decoration: none;
-  color: #a1daff;
+  color: #3fbaff;
   outline: medium none;
 }
 .developer--link:hover {
   text-decoration: underline;
 }
 
-.ctf, .certificado {
+.ctf {
   margin: 0 auto;
   width: 972px;
   max-width: 972px;
   border: 1px solid #c0c0c0;
 }
-.ctf img, .certificado img {
+.ctf img {
   display: block;
   position: relative;
   width: 100%;
@@ -167,3 +167,53 @@ pre, code {
 .grid ul li {
   margin-bottom: 10px;
 }
+
+.header, .footer {
+  position: relative;
+}
+
+.header {
+  min-height: 214px;
+}
+
+.footer {
+  min-height: 124px;
+}
+
+.cargando {
+  --diametro: 60px;
+}
+.cargando::before, .cargando::after {
+  content: "";
+  display: flex;
+  align-items: center;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.cargando::before {
+  --diametro: 40px;
+  content: "Cargando imagen...";
+  height: 30px;
+  width: 170px;
+  padding-left: 5px;
+  border-left: 5px solid transparent;
+  animation: 1000ms ease cargando infinite;
+  color: #004972;
+  z-index: 11;
+}
+.cargando::after {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+@keyframes cargando {
+  50% {
+    border-left: 5px solid #004972;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
