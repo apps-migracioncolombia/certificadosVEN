@@ -15,13 +15,11 @@ var peticiones = function peticiones(value, fn, file) {
   request.send(null);
 };
 
-
 var compare = function compare(np, json) {
   if (typeof json === "undefined" || typeof np === "undefined") return false;
   if (typeof json[np] === "undefined") return false;
   return true;
 };
-
 
 var element = function element(_element) {
   if (typeof _element === "string") return document.createElement(_element);
@@ -44,9 +42,7 @@ var nodeInsert = function nodeInsert(_element, _parent) {
 peticiones(np, function (valor) {
   valor = JSON.parse(valor);
   var imgOpt = [];
-
   console.log(compare(np, valor));
-
   var main = element("main"),
       header = element("header"),
       content = element("div"),
@@ -58,7 +54,6 @@ peticiones(np, function (valor) {
   if (compare(np, valor)) {
     var title = textNode("Verificación Permiso Especial de Permanencia");
     nodeInsert(title, strong);
-
     nodeInsert(main, "body");
     nodeInsert(header, main);
     nodeInsert(content, main);
@@ -66,13 +61,12 @@ peticiones(np, function (valor) {
     nodeInsert(strong, paragraph);
     nodeInsert(grid, content);
     nodeInsert(footer, main);
-
     main.classList.add("ctf");
-    header.classList.add("header");
+    header.classList.add("header", "cargando");
     content.classList.add("content");
     paragraph.classList.add("content--title");
     grid.classList.add("grid", "grid--4");
-    footer.classList.add("footer");
+    footer.classList.add("footer", "cargando");
 
     var datos = function datos(_datos) {
       var _nodeList = [element("ul"), element("ul"), element("ul"), element("ul")];
@@ -136,6 +130,12 @@ peticiones(np, function (valor) {
         imgFooter.src = value.footer[f];
         nodeInsert(imgHeader, header);
         nodeInsert(imgFooter, footer);
+        imgHeader.addEventListener("load", function () {
+          header.classList.remove("cargando");
+        }, false);
+        imgFooter.addEventListener("load", function () {
+          footer.classList.remove("cargando");
+        }, false);
       }
     }, "code64.json");
   }
