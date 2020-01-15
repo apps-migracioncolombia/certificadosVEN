@@ -129,13 +129,13 @@ pre, code {
   text-decoration: underline;
 }
 
-.certificado {
+.ctf, .certificado {
   margin: 0 auto;
   width: 972px;
   max-width: 972px;
   border: 1px solid #c0c0c0;
 }
-.certificado img {
+.ctf img, .certificado img {
   display: block;
   position: relative;
   width: 100%;
